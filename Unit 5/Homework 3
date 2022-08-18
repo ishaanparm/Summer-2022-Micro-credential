@@ -1,0 +1,29 @@
+#Create a table with the following parameters:
+CustomerID
+CustomerName
+Address
+City
+PostalCode
+Country
+Email
+CREATE TABLE customers (
+Customer_ID int,
+Customer_Name varchar(255),
+Address varchar(255),
+City varchar(255),
+Postal_Code int,
+Country varchar(255),
+Email varchar(255)
+
+#Use an UPDATE to modify any portion of the data
+INSERT INTO customers (Customer_ID, Customer_Name, Address, City, Postal_Code, Country, Email)
+VALUES (1, 'Eliana_Li', '123 Beauty Street', 'Albertson', 11507, 'USA', 'elianali@gmail.com'),
+       (2, 'Jason Choi', '225 Orchard Park', 'Allendale', 07401, 'USA', 'jasonchoi@gmail.com'),
+       (3, 'Wubby Bear', '150 Fairhaven Drive', 'Jericho', 11753, 'USA', 'wubbybear@gmail.com');
+update customers 
+SET customer_name = 'Eliana Li'
+Where customer_id = 1;
+
+#Finally, write a statement to delete one row of data.
+delete from customers where customer_id = 3;
+select * from customers
