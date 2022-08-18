@@ -1,0 +1,29 @@
+#Join the film to the film_actor table.
+select film.film_id, film.title, film.description,
+film.release_year, film.language_id, film.rental_duration,
+film.rental_rate, film.length, film.replacement_cost,
+film.rating, film.last_update, film.special_features,
+film.fulltext, actor_id
+FROM film
+Full join film_actor
+On film.film_id = film_actor.film_id;
+
+#Join the actor table to the film_actor table.
+select actor.actor_id, actor.first_name, actor.last_name, actor.last_update, film_actor.film_id
+from actor
+FULL JOIN film_actor
+ON actor.actor_id = film_actor.actor_id
+
+#Try to join the actor, film_actor, and film table together (3 joins!)
+select film.film_id, film.title, film.description,
+film.release_year, film.language_id, film.rental_duration,
+film.rental_rate, film.length, film.replacement_cost,
+film.rating, film.last_update, film.special_features,
+film.fulltext, film_actor.actor_id, actor.first_name, actor.last_name
+FROM film AS film
+FULL JOIN
+film_actor AS film_actor
+On film.film_id = film_actor.film_id
+FULL JOIN
+actor AS actor
+ON film_actor.last_update = actor.last_update;
